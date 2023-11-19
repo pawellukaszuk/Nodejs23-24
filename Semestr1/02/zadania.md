@@ -1,4 +1,4 @@
-## Zadania do wykonania w czasie ćwiczeń
+## Zadania
 
 1. Stworzenie aplikacji składającej się z 2 plików `app.js` oraz plików z `utils.js` w którym to zostanie zaimplementowana funkcja która zwraca nową tablicę bez zduplikowanych elementów.
 
@@ -54,7 +54,7 @@ Min: -1002
 5. Zainstalowanie globalnego modułu 'nodemon' (https://www.npmjs.com/package/nodemon), który umożliwia automatyczne restartowanie w przypadku wykrycia zmian w uruchomionych aplikacjach.
 Aplikacja wyświetla w konsoli dowolny komunikat. Po zmianie kodu aplikacji (i zapisaniu zmian) powinna się ona automatycznie uruchomić ponownie.
 
-6. Stworzenie kalkulatora wprowadzonych danych. Przy użyciu zewnętrznej biblioteki `yargs` (moduł odpowiedzialny parsowanie parametrów wejściowych). 
+6. Stworzenie kalkulatora który będzie pracował na danych wprowadzonych w prarametrach uruchamiania. Przy użyciu zewnętrznego modułu `yargs` (moduł odpowiedzialny za przetwarzanie parametrów wejściowych). 
 
 Podstawowa dokumentacja: https://davidwalsh.name/nodejs-arguments-yargs
 
@@ -80,14 +80,62 @@ const user = {
     lastName: 'Nowak'
 };
 ```
-Wynik zapisać do pliku `user.json`.
+Wynik należy zapisać do pliku `user.json`.
 
-8. Rozszerzenie aplikacji z zadania 7 o dynamiczne wprowadzanie danych które chcemy zapisać do pliku. Do wykorzystania zewnętrzny moduł `yargs`.
+8. Rozszerzenie aplikacji z zadania 7 o wprowadzanie danych które chcemy zapisać w parametrach uruchamiania. Do wykorzystania zewnętrzny moduł `yargs`.
 
 Przykład uruchomienia aplikacji
 ```bash
 node app.js --name=Adam --lastName=Mickiewicz
 ```
-Wprowadzane dane powinny być zapisane do pliku.
 
-9. Dodanie do naszej aplikacji z zadania 8 odczytu danych przed nadpisaniem nowymi wartościami. W konsoli wypiszmy jedynie imię wczytanego użytkownika.
+9. Program który wyświetla informacje o plikach i folderach w danej lokalizacji:
+- użytkownik w parametrze podaje adres folderu (parametr wymagany) i rozmiar pliku (parametr opcjonalny)
+- program wyświetla informacje o plikach w folderze: nazwa i wielkość:
+    - jeżeli użytkownik poda w parametrze rozmiar pliku, to wyświetlamy listę plików, które są większe niż podany rozmiar
+    - w przeciwnym wypadku, wyświetlamy listę plików których rozmiar jest większy niż średni rozmiar pliku w tym folderze
+
+Pliki powinny być posortowane malejąco od największych do najmniejszych.
+
+Podpowiedzi:
+- zadanie można wykonać przy pomocy modułów które już wykorzystywaliśmy na zajęciach
+- dozwolone jest użycie innych modułów dostępnych w `npm`
+- dla ułatwienia możemy potraktować foldery jako pliki o rozmiarze 0
+- nie trzeba robić tabelki jak na przykładzie ;)
+
+
+```
+Przykład:
+
+folder zawiera takie pliki:
+┌─────────────────────┬──────┐
+│        name         │ size │
+├─────────────────────┼──────┤
+│      'app.js'       │ 974  │
+│   'node_modules'    │  0   │
+│ 'package-lock.json' │ 6598 │
+│   'package.json'    │ 288  │
+│     'user.json'     │  39  │
+└─────────────────────┴──────┘
+
+Przykładowe uruchomienie aplikacji:
+> node app.js --directory==C:/code --size=200
+Wynik działania aplikacji:
+┌─────────────────────┬──────┐
+│        name         │ size │
+├─────────────────────┼──────┤
+│ 'package-lock.json' │ 6598 │
+│      'app.js'       │ 974  │
+│   'package.json'    │ 288  │
+└─────────────────────┴──────┘
+
+Przykładowe uruchomienie aplikacji:
+> node app.js --directory==C:/code
+Wynik działania aplikacji:
+mean file size: 1583.4
+┌─────────────────────┬──────┐
+│        name         │ size │
+├─────────────────────┼──────┤
+│ 'package-lock.json' │ 6598 │
+└─────────────────────┴──────┘
+```

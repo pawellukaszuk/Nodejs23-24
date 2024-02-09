@@ -1,0 +1,17 @@
+node -v
+node -h
+node --help
+
+repl
+
+autocomplete
+proce[tab]
+
+[tab][tab] - podpowiedź wszystkiego
+
+
+consola
+ | clip
+ 
+ zapis do pliku
+ 

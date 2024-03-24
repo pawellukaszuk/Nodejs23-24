@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "0878541a-872a-452e-a6fd-7a404e33ed8e",
+		"name": "PS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lab01",
+			"item": [
+				{
+					"name": "Node",
+					"item": [
+						{
+							"name": "01",
+							"item": [
+								{
+									"name": "basic request",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}"
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "02",
+							"item": [
+								{
+									"name": "basic request",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}"
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "03",
+							"item": [
+								{
+									"name": "GET request",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								},
+								{
+									"name": "POST request",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}"
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OTHER request",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}"
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "04",
+							"item": [
+								{
+									"name": "GET /users",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET /comments",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/comments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"comments"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET other",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/random-path",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"random-path"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "05",
+							"item": [
+								{
+									"name": "Name = Adam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}?name=Adam",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"query": [
+												{
+													"key": "name",
+													"value": "Adam"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "No name",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}"
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Express",
+					"item": [
+						{
+							"name": "01",
+							"item": [
+								{
+									"name": "Url params - empty",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/url-params",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"url-params"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Url params - Adam",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/url-params/Adam",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"url-params",
+												"Adam"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Query string params - empty",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/query-string-params",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"query-string-params"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Query string params - Jan",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/query-string-params?name=Jan",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"query-string-params"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "Jan"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "02",
+							"item": [
+								{
+									"name": "Correct params",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/5/6",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"5",
+												"6"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Incorrect params",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/5/asdasd",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"5",
+												"asdasd"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "No params",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}"
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "04",
+							"item": [
+								{
+									"name": "Add - correct",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/users?firstName=Jan&lastName=janko&email=jan@nowak.abc",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "firstName",
+													"value": "Jan"
+												},
+												{
+													"key": "lastName",
+													"value": "janko"
+												},
+												{
+													"key": "email",
+													"value": "jan@nowak.abc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add - incorrect",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/users?firstName=Jan&lastName=janko",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"users"
+											],
+											"query": [
+												{
+													"key": "firstName",
+													"value": "Jan"
+												},
+												{
+													"key": "lastName",
+													"value": "janko"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all users",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get existing user",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/users/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"users",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get not existing user",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/users/1001",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"users",
+												"1001"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete existing user",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/users/1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"users",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete not existing user Copy 2",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}:{{port}}/users/1001",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"users",
+												"1001"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

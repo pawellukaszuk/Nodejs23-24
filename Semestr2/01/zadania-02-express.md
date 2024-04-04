@@ -101,7 +101,7 @@ Wysłanie JSON za pomocą Postmana (odpowiedni nagłówek content-type zostanie 
 
 6. Podzielmy odpowiednio naszą aplikację z zadania 5 wykorzystując `express.Router` https://expressjs.com/en/4x/api.html#router
 
-7. Zmodyfikujmy zadanie 6 tak by adres zwracający dane pojedynczego użytkownika zwracał różne format danych w zależności od nagłówka żądania Accept (przykładowe nagłówki: text/plain, text/html, application/json). Należy użyć funkcji res.format().
+7. Zmodyfikujmy zadanie 6 tak by adres zwracający dane pojedynczego użytkownika zwracał różne formaty danych w zależności od nagłówka żądania Accept (przykładowe nagłówki: text/plain, text/html, application/json). Należy użyć funkcji res.format().
 
 Ustawienie nagłówka żądania Accept:
 ![step 1](./assets/02.png)

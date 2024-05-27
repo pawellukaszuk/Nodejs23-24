@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "933c9560-cf59-4d91-9378-d2696aa56fd3",
+		"name": "Books",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// zobacz zakładkę `visualize` obok response z serwera\r",
+							"\r",
+							"const books = pm.response.json().documents;\r",
+							"\r",
+							"let template = `\r",
+							"    Book Count: {{model.length}}\r",
+							"    <table>\r",
+							"        <tr>\r",
+							"            <th>Autor</th>\r",
+							"            <th>Tytuł</th>\r",
+							"            <th>Data Nowość</th>\r",
+							"            <th>Id</th>\r",
+							"        </tr>\r",
+							"\r",
+							"        {{#each model}}\r",
+							"            <tr>\r",
+							"                <td>{{autor}}</td>\r",
+							"                <td>{{tytul}}</td>\r",
+							"                <td>{{dataNowosc}}</td>\r",
+							"                <td><a href=\"https://opac.ksiaznicapodlaska.pl/document/{{id}}\">{{id}}</a></td>\r",
+							"            </tr>\r",
+							"        {{/each}}\r",
+							"    </table>\r",
+							"`;\r",
+							"\r",
+							"pm.visualizer.set(template, {\r",
+							"    model: books\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"start\": 0,\r\n    \"count\": 500,\r\n    \"sort\": \"SCORE\",\r\n    \"rokOd\": null,\r\n    \"rokDo\": null,\r\n    \"filiaIdSet\": [\r\n        1\r\n    ],\r\n    \"jezykIdSet\": [],\r\n    \"operatorAnd\": true,\r\n    \"loadFacets\": true,\r\n    \"queryLst\": [\r\n        {\r\n            \"indexId\": -1,\r\n            \"operator\": null,\r\n            \"value\": \"\"\r\n        }\r\n    ],\r\n    \"facets\": {},\r\n    \"available\": null,\r\n    \"collectionId\": 5,\r\n    \"workId\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://opac.ksiaznicapodlaska.pl/api/search",
+					"protocol": "https",
+					"host": [
+						"opac",
+						"ksiaznicapodlaska",
+						"pl"
+					],
+					"path": [
+						"api",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

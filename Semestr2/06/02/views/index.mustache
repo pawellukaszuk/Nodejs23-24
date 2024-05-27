@@ -1,0 +1,37 @@
+{{! this is comment, it starts with exclamation }}
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link href="{{ cssLink }}" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <h1>{{ header }}</h1>
+        <h1>Hello {{ header }} !</h1>
+        <p>{{ paragraphText }}</p>
+        <p>this is hardcoded text in paragraph</p>
+        <p style='color: red; font-weight: bold'>this is hardcoded text {{ paragraphText }} this is also hardcoded text</p>
+
+        {{ #showHidden }}
+            <div style="color: red">my hidden text</div>
+        {{ /showHidden }}
+        {{ ^showHidden }}
+            <div style="color: green">my normal text</div>
+        {{ /showHidden }}
+
+        <div class="container">
+            <div class="box">
+                <span id="my_span">this is text in span</span>
+            </div>
+        </div>
+            
+        <img src="{{ img.link }}" alt="{{ img.altText }}" width="{{ img.width }}" height="{{ img.height }}" />                
+
+        <ul>
+            {{ #letters }}
+                <li>{{ . }}</li>
+            {{ /letters }}
+        </ul>
+
+    </body>
+</html>
